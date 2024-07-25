@@ -6,6 +6,8 @@ import { RootState } from '..'
 
 export type UtilSliceType = {
   notifications: NotificationType[]
+  victimName?: string
+  victimPic?: string
 }
 
 const initialState: UtilSliceType = {
@@ -33,13 +35,26 @@ const utilsSlice = createSlice({
     resetNotification: (state) => {
       state.notifications = []
     },
+    setVictimName: (state, action: PayloadAction<string>) => {
+      state.victimName = action.payload
+    },
+    setVictimPic: (state, action: PayloadAction<string>) => {
+      state.victimPic = action.payload
+    },
   },
 })
 
-export const { addNotification, removeNotification, resetNotification } =
-  utilsSlice.actions
+export const {
+  addNotification,
+  removeNotification,
+  resetNotification,
+  setVictimName,
+  setVictimPic,
+} = utilsSlice.actions
 
 export const selectNotifications = (state: RootState) =>
   state.utils.notifications
+export const selectVictimName = (state: RootState) => state.utils.victimName
+export const selectVictimPic = (state: RootState) => state.utils.victimPic
 
 export const utilsReducer = utilsSlice.reducer
