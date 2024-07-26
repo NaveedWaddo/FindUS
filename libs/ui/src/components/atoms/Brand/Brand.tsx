@@ -30,13 +30,13 @@ export const Brand = ({ type }: IBrandProps) => {
       <div>
         <div className="flex gap-1">
           <div className="text-xl font-black">
-            FindUS{victimName ? ' ' + victimName : ''}?
+            Have you seen{victimName ? ' ' + victimName : ''}?
           </div>
           <span className="text-xs">{type}</span>
         </div>
         <GradientText className="text-xs">
           Portfolio project by{' '}
-          <span className="italic">Naveed Waddo</span>
+          <span className="italic">Karthick Ragavendran</span>
         </GradientText>
       </div>
     </div>
