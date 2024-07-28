@@ -1,4 +1,4 @@
-import { LatLng } from '@haveyouseen-org/types'
+import { LatLng } from '@findus-org/types'
 import { useState, useEffect } from 'react'
 
 export const useMapboxDirections = (start: LatLng, end: LatLng) => {

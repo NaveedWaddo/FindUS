@@ -1,4 +1,4 @@
-import { CaseQuery } from '@haveyouseen-org/network/src/generated'
+import { CaseQuery } from '@findus-org/network/src/generated'
 
 export interface IContactInfoProps {
   contact: NonNullable<CaseQuery['case']>['contact']
@@ -12,9 +12,7 @@ export const ContactInfo = ({ contact }: IContactInfoProps) => {
       </div>
       <div>
         <div className="text-lg font-light">Contact</div>
-        {contact?.map((contact) => (
-          <div key={contact}>{contact}</div>
-        ))}
+        {contact?.map((contact) => <div key={contact}>{contact}</div>)}
       </div>
     </>
   )

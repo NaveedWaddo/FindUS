@@ -1,5 +1,5 @@
-import { useUserListener } from '@haveyouseen-org/hooks/src/user'
-import { useNotification } from '@haveyouseen-org/hooks/src/notifications'
+import { useUserListener } from '@findus-org/hooks/src/user'
+import { useNotification } from '@findus-org/hooks/src/notifications'
 
 export interface IAppLevelListenersProps {}
 

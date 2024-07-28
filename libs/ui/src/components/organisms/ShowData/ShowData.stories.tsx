@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { ShowData } from './ShowData'
-import { useTakeSkip } from '@haveyouseen-org/util'
+import { useTakeSkip } from '@findus-org/util'
 
 const meta: Meta<typeof ShowData> = {
   component: ShowData,

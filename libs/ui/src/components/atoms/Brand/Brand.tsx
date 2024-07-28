@@ -1,8 +1,8 @@
 import { IconUser } from '@tabler/icons-react'
 import Image from 'next/image'
 import { GradientText } from '../../molecules/GradientText'
-import { useAppSelector } from '@haveyouseen-org/store'
-import { selectVictimName, selectVictimPic } from '@haveyouseen-org/store/utils'
+import { useAppSelector } from '@findus-org/store'
+import { selectVictimName, selectVictimPic } from '@findus-org/store/utils'
 
 export interface IBrandProps {
   type?: 'admin' | 'officer'
@@ -30,13 +30,12 @@ export const Brand = ({ type }: IBrandProps) => {
       <div>
         <div className="flex gap-1">
           <div className="text-xl font-black">
-            Have you seen{victimName ? ' ' + victimName : ''}?
+            FindUS {victimName ? ' ' + victimName : ' '}
           </div>
           <span className="text-xs">{type}</span>
         </div>
         <GradientText className="text-xs">
-          Portfolio project by{' '}
-          <span className="italic">Karthick Ragavendran</span>
+          Project by <span className="italic">Naveed Waddo</span>
         </GradientText>
       </div>
     </div>

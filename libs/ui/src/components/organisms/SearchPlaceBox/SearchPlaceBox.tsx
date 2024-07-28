@@ -1,7 +1,4 @@
-import {
-  LocationInfo,
-  useSearchLocation,
-} from '@haveyouseen-org/hooks/src/location'
+import { LocationInfo, useSearchLocation } from '@findus-org/hooks/src/location'
 import { Autocomplete } from '../../atoms/Autocomplete'
 
 export interface ISearchPlaceBoxProps {

@@ -2,11 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { ReactNode } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { z } from 'zod'
-import {
-  Gender,
-  ReportType,
-  Status,
-} from '@haveyouseen-org/network/src/generated'
+import { Gender, ReportType, Status } from '@findus-org/network/src/generated'
 
 export const newReportFormSchema = z.object({
   localId: z.string(),

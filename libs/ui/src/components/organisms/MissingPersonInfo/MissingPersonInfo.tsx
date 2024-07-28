@@ -1,5 +1,5 @@
 import { formatDistance, formatDistanceToNow } from 'date-fns'
-import { CaseQuery } from '@haveyouseen-org/network/src/generated'
+import { CaseQuery } from '@findus-org/network/src/generated'
 import { KeyValue } from '../../atoms/KeyValue'
 import Image from 'next/image'
 

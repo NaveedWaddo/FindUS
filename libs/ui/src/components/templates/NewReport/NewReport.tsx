@@ -9,7 +9,7 @@ import { format } from 'date-fns'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useMemo, useState } from 'react'
-import { useFormCreateWitness } from '@haveyouseen-org/forms/src/createWitness'
+import { useFormCreateWitness } from '@findus-org/forms/src/createWitness'
 import { useFieldArray, useWatch } from 'react-hook-form'
 import {
   LngLatBounds,
@@ -26,7 +26,7 @@ import {
   useCaseQuery,
   useWitnessMeQuery,
   namedOperations,
-} from '@haveyouseen-org/network/src/generated'
+} from '@findus-org/network/src/generated'
 
 import { Button } from '../../atoms/Button'
 import { Container } from '../../atoms/Container'
@@ -43,10 +43,10 @@ import { DisplayLocation, MarkerPopup } from '../AddNewCase/AddNewCase'
 import { PopupContent } from '../Home/Home'
 import { MapLines } from '../../molecules/MapLines'
 
-import { useFormAddNewReports } from '@haveyouseen-org/forms/src/addNewReports'
-import { useAppSelector } from '@haveyouseen-org/store'
-import { selectUid } from '@haveyouseen-org/store/user'
-import { convertReportsToCoordinates, makeId } from '@haveyouseen-org/util'
+import { useFormAddNewReports } from '@findus-org/forms/src/addNewReports'
+import { useAppSelector } from '@findus-org/store'
+import { selectUid } from '@findus-org/store/user'
+import { convertReportsToCoordinates, makeId } from '@findus-org/util'
 import { TitleValue } from '../../atoms/TitleValue'
 
 export interface INewReportProps {}

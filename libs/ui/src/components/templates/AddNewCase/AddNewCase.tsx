@@ -2,13 +2,13 @@ import { ReactNode, useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Popup, useMap } from 'react-map-gl'
 import { Controller, useFormContext, useWatch } from 'react-hook-form'
-import { FormTypeAddNewCase } from '@haveyouseen-org/forms/src/addNewCase'
+import { FormTypeAddNewCase } from '@findus-org/forms/src/addNewCase'
 import {
   Gender,
   ReportType,
   Status,
   useCreateCaseMutation,
-} from '@haveyouseen-org/network/src/generated'
+} from '@findus-org/network/src/generated'
 import { Button } from '../../atoms/Button'
 import { HtmlInput } from '../../atoms/HtmlInput'
 import { HtmlLabel } from '../../atoms/HtmlLabel'
@@ -35,18 +35,18 @@ import { format } from 'date-fns'
 import { AudioRecord } from '../../molecules/AudioRecord'
 
 import { useRouter } from 'next/navigation'
-import { notification$ } from '@haveyouseen-org/util/subjects'
-import { makeId, useImageUpload } from '@haveyouseen-org/util'
+import { notification$ } from '@findus-org/util/subjects'
+import { makeId, useImageUpload } from '@findus-org/util'
 import { TitleValue } from '../../atoms/TitleValue'
 import { Panel } from '../../organisms/Map/Panel'
 import { DefaultZoomControls } from '../../organisms/Map/ZoomControls/ZoomControls'
 import { SearchPlaceBox } from '../../organisms/SearchPlaceBox'
 import { ImageUploadPreview } from '../../organisms/ImageUploadPreview'
-import { useAppDispatch, useAppSelector } from '@haveyouseen-org/store'
-import { setVictimName, setVictimPic } from '@haveyouseen-org/store/utils'
+import { useAppDispatch, useAppSelector } from '@findus-org/store'
+import { setVictimName, setVictimPic } from '@findus-org/store/utils'
 import Accordion from '../../molecules/Accordion'
 import { PlainButton } from '../../atoms/PlainButton'
-import { selectUid } from '@haveyouseen-org/store/user'
+import { selectUid } from '@findus-org/store/user'
 
 export interface IAddNewCaseProps {}
 

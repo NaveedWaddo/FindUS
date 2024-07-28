@@ -4,11 +4,11 @@ import { IconDoorExit, IconMenu2 } from '@tabler/icons-react'
 import { Sidebar } from '../Sidebar'
 import { Brand } from '../../atoms/Brand'
 import { Button } from '../../atoms/Button'
-import { useAppSelector } from '@haveyouseen-org/store'
-import { selectUid } from '@haveyouseen-org/store/user'
+import { useAppSelector } from '@findus-org/store'
+import { selectUid } from '@findus-org/store/user'
 
-import { MenuItem } from '@haveyouseen-org/types'
-import { signOut } from '@haveyouseen-org/network/src/auth'
+import { MenuItem } from '@findus-org/types'
+import { signOut } from '@findus-org/network/src/auth'
 
 export interface INavSidebarProps {
   menuItems: MenuItem[]

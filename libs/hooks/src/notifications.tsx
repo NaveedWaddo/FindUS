@@ -1,10 +1,7 @@
-import {
-  addNotification,
-  removeNotification,
-} from '@haveyouseen-org/store/utils'
+import { addNotification, removeNotification } from '@findus-org/store/utils'
 
-import { notification$ } from '@haveyouseen-org/util/subjects'
-import { makeId } from '@haveyouseen-org/util'
+import { notification$ } from '@findus-org/util/subjects'
+import { makeId } from '@findus-org/util'
 import { useEffect } from 'react'
 import {
   debounceTime,
@@ -15,8 +12,8 @@ import {
   catchError,
   EMPTY,
 } from 'rxjs'
-import { useAppDispatch } from '@haveyouseen-org/store'
-import {} from '@haveyouseen-org/store/utils'
+import { useAppDispatch } from '@findus-org/store'
+import {} from '@findus-org/store/utils'
 
 export const useNotification = () => {
   const dispatch = useAppDispatch()

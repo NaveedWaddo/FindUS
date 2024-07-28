@@ -3,16 +3,16 @@ import { HtmlInput } from '../../atoms/HtmlInput'
 import { Button } from '../../atoms/Button'
 import Link from 'next/link'
 
-import { FormTypeLogin, useFormLogin } from '@haveyouseen-org/forms/src/login'
+import { FormTypeLogin, useFormLogin } from '@findus-org/forms/src/login'
 import { FormError } from '../../atoms/FormError'
 import { Form } from '../../atoms/Form'
 
-import { useAppSelector } from '@haveyouseen-org/store'
-import { selectUid } from '@haveyouseen-org/store/user'
+import { useAppSelector } from '@findus-org/store'
+import { selectUid } from '@findus-org/store/user'
 
-import { useAsync } from '@haveyouseen-org/hooks/src/fetcher'
-import { login } from '@haveyouseen-org/network/src/auth'
-import { notification$ } from '@haveyouseen-org/util/subjects'
+import { useAsync } from '@findus-org/hooks/src/fetcher'
+import { login } from '@findus-org/network/src/auth'
+import { notification$ } from '@findus-org/util/subjects'
 import { useRouter } from 'next/router'
 
 export interface ILoginFormProps {
@@ -73,7 +73,7 @@ const LoginForm = ({ className }: ILoginFormProps) => {
       </Button>
       {error ? <FormError error={error.message} /> : null}
       <div className="mt-4 text-sm">
-        Do not have a haveyouseen account?
+        Do not have a FindUS account?
         <br />
         <Link
           href="/register"

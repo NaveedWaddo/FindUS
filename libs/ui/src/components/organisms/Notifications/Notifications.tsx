@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 
-import { useAppSelector } from '@haveyouseen-org/store'
-import { NotificationType } from '@haveyouseen-org/types'
+import { useAppSelector } from '@findus-org/store'
+import { NotificationType } from '@findus-org/types'
 
 export const Notifications = () => {
   const notifications = useAppSelector((state) => state.utils.notifications)

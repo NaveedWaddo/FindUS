@@ -1,5 +1,5 @@
-import { useAppSelector } from '@haveyouseen-org/store'
-import { selectUser } from '@haveyouseen-org/store/user'
+import { useAppSelector } from '@findus-org/store'
+import { selectUser } from '@findus-org/store/user'
 import Link from 'next/link'
 import { LoaderPanel } from '../../molecules/Loader'
 import { AlertSection } from '../../organisms/AlertSection'

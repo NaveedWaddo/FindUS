@@ -1,11 +1,11 @@
 {
-  "name": "@haveyouseen-org/util",
+  "name": "@findus-org/util",
   "version": "1.0.0",
   "main": "index.ts",
   "license": "MIT",
   "dependencies": {
-    "@haveyouseen-org/network": "*",
-    "@haveyouseen-org/types": "*",
+    "@findus-org/network": "*",
+    "@findus-org/types": "*",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.0",
     "jwt-decode": "^3.1.2",

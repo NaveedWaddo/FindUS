@@ -1,5 +1,5 @@
 import { format } from 'date-fns'
-import { useFormApproveReport } from '@haveyouseen-org/forms/src/approveReport'
+import { useFormApproveReport } from '@findus-org/forms/src/approveReport'
 import { SetStateAction, useMemo, useState } from 'react'
 import { useMap } from 'react-map-gl'
 import { Button } from '../../atoms/Button'
@@ -8,7 +8,7 @@ import { CaseReport } from '../Home/Home'
 import {
   namedOperations,
   useCreateApprovedReportMutation,
-} from '@haveyouseen-org/network/src/generated'
+} from '@findus-org/network/src/generated'
 import { PlainButton } from '../../atoms/PlainButton'
 import { Dialog } from '../../atoms/Dialog'
 import { Form } from '../../atoms/Form'

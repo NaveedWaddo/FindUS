@@ -1,11 +1,11 @@
 {
-  "name": "@haveyouseen-org/network",
+  "name": "@findus-org/network",
   "version": "1.0.0",
   "main": "src/index.ts",
   "license": "MIT",
   "dependencies": {
     "@apollo/client": "3.7.10",
-    "@haveyouseen-org/store": "*",
+    "@findus-org/store": "*",
     "firebase": "9.19.0",
     "graphql": "16.7.1",
     "graphql-request": "5.2.0",

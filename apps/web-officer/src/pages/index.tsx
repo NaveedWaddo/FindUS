@@ -1,5 +1,5 @@
 import { Tienne } from 'next/font/google'
-import { HomePage } from '@haveyouseen-org/ui/src/components/templates/Home'
+import { HomePage } from '@findus-org/ui/src/components/templates/Home'
 
 const inter = Tienne({ weight: ['400', '700', '900'], subsets: ['latin'] })
 

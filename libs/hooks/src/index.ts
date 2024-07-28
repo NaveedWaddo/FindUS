@@ -1,9 +1,9 @@
-import { notification$ } from '@haveyouseen-org/util/subjects'
+import { notification$ } from '@findus-org/util/subjects'
 import { useRouter } from 'next/router'
 import { RefObject, useEffect, useRef, useState } from 'react'
-import { selectUid } from '@haveyouseen-org/store/user'
+import { selectUid } from '@findus-org/store/user'
 import { usePathname } from 'next/navigation'
-import { useAppSelector } from '@haveyouseen-org/store'
+import { useAppSelector } from '@findus-org/store'
 
 export const useRedirectLoggedInUsers = () => {
   const uid = useAppSelector(selectUid)

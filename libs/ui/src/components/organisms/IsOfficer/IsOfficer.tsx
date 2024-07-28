@@ -1,7 +1,7 @@
 import {
   OfficerMeQuery,
   useOfficerMeQuery,
-} from '@haveyouseen-org/network/src/generated'
+} from '@findus-org/network/src/generated'
 import { LoaderPanel } from '../../molecules/Loader'
 import { CreateOfficer } from '../../templates/Officer/Officer'
 import { ReactNode } from 'react'

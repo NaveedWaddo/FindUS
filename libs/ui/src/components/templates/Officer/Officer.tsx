@@ -8,13 +8,13 @@ import {
   namedOperations,
   useCreateOfficerMutation,
   useUnapprovedReportsQuery,
-} from '@haveyouseen-org/network/src/generated'
-import { useAppSelector } from '@haveyouseen-org/store'
-import { useFormCreateOfficer } from '@haveyouseen-org/forms/src/createOfficer'
-import { selectUid } from '@haveyouseen-org/store/user'
-import { notification$ } from '@haveyouseen-org/util/subjects'
+} from '@findus-org/network/src/generated'
+import { useAppSelector } from '@findus-org/store'
+import { useFormCreateOfficer } from '@findus-org/forms/src/createOfficer'
+import { selectUid } from '@findus-org/store/user'
+import { notification$ } from '@findus-org/util/subjects'
 import { ShowData } from '../../organisms/ShowData'
-import { useTakeSkip } from '@haveyouseen-org/util'
+import { useTakeSkip } from '@findus-org/util'
 import { format } from 'date-fns'
 
 export interface IOfficerProps {}

@@ -1,7 +1,7 @@
-import { auth } from '@haveyouseen-org/network/src/config/firebase'
+import { auth } from '@findus-org/network/src/config/firebase'
 
-import { useAppDispatch, useAppSelector } from '@haveyouseen-org/store'
-import { selectUid, resetUser, setUser } from '@haveyouseen-org/store/user'
+import { useAppDispatch, useAppSelector } from '@findus-org/store'
+import { selectUid, resetUser, setUser } from '@findus-org/store/user'
 
 import { onAuthStateChanged } from 'firebase/auth'
 import { useEffect } from 'react'

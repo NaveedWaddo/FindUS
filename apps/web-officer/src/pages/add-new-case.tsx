@@ -1,10 +1,10 @@
-import { Container } from '@haveyouseen-org/ui/src/components/atoms/Container'
-import { IsLoggedIn } from '@haveyouseen-org/ui/src/components/organisms/IsLoggedIn'
-import { IsOfficer } from '@haveyouseen-org/ui/src/components/organisms/IsOfficer'
-import { AddNewCase } from '@haveyouseen-org/ui/src/components/templates/AddNewCase/AddNewCase'
+import { Container } from '@findus-org/ui/src/components/atoms/Container'
+import { IsLoggedIn } from '@findus-org/ui/src/components/organisms/IsLoggedIn'
+import { IsOfficer } from '@findus-org/ui/src/components/organisms/IsOfficer'
+import { AddNewCase } from '@findus-org/ui/src/components/templates/AddNewCase/AddNewCase'
 import { MapProvider } from 'react-map-gl'
 import Head from 'next/head'
-import { FormProviderAddNewCase } from '@haveyouseen-org/forms/src/addNewCase'
+import { FormProviderAddNewCase } from '@findus-org/forms/src/addNewCase'
 
 export default function AddNewCasePage() {
   return (

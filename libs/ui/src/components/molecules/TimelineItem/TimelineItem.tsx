@@ -13,7 +13,7 @@ import {
   IconEyeCheck,
   IconInfoSquareRounded,
 } from '@tabler/icons-react'
-import { ReportType } from '@haveyouseen-org/network/src/generated'
+import { ReportType } from '@findus-org/network/src/generated'
 
 export type TimelineStepType = {
   children: React.ReactNode

@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { NotificationType } from '@haveyouseen-org/types'
+import { NotificationType } from '@findus-org/types'
 
 import { RootState } from '..'
 

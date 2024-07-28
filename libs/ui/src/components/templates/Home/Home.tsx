@@ -11,7 +11,8 @@ import {
   useUnapprovedReportsQuery,
   useSearchCasesQuery,
   useCaseLazyQuery,
-} from '@haveyouseen-org/network/src/generated'
+  SearchCasesQueryResult,
+} from '@findus-org/network/src/generated'
 
 import { Map } from '../../organisms/Map'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -28,7 +29,7 @@ import { Button } from '../../atoms/Button'
 import { Panel } from '../../organisms/Map/Panel'
 import Accordion from '../../molecules/Accordion'
 import { LinkButton } from '../../atoms/LinkButton'
-import { useFormAddNewReports } from '@haveyouseen-org/forms/src/addNewReports'
+import { useFormAddNewReports } from '@findus-org/forms/src/addNewReports'
 import { FormProvider, useWatch } from 'react-hook-form'
 import { HtmlLabel } from '../../atoms/HtmlLabel'
 import { HtmlTextArea } from '../../atoms/HtmlTextArea'
@@ -50,9 +51,9 @@ import { AddReports } from '../AddReports'
 import { ReportsTimeline } from '../ReportsTimeline'
 import { MissingPersonInfo } from '../../organisms/MissingPersonInfo'
 import { ContactInfo } from '../../organisms/ContactInfo'
-import { useKeypress } from '@haveyouseen-org/util'
-import { useAppSelector } from '@haveyouseen-org/store'
-import { selectUid, selectUser } from '@haveyouseen-org/store/user'
+import { useKeypress } from '@findus-org/util'
+import { useAppSelector } from '@findus-org/store'
+import { selectUid, selectUser } from '@findus-org/store/user'
 import { DefaultZoomControls } from '../../organisms/Map/ZoomControls/ZoomControls'
 
 export interface IHomePageProps {}
@@ -191,7 +192,7 @@ export const DisplayOneCase = ({ caseId }: { caseId?: number }) => {
             variant="text"
             size="none"
             onClick={() => {
-              thisMap?.flyTo({ zoom: 6 })
+              //   thisMap?.flyTo({ zoom: 6 })
               router.push({ pathname: '/' })
             }}
           >
@@ -301,6 +302,18 @@ export const ManageUnapprovedReports = () => {
   )
 }
 
+function usePreviousData<T>(data?: T) {
+  const [displayData, setDisplayData] = useState<T>()
+
+  useEffect(() => {
+    if (data) {
+      setDisplayData(data)
+    }
+  }, [data])
+
+  return displayData
+}
+
 export const DisplayAllMarkers = ({ bounds }: { bounds?: LngLatBounds }) => {
   const { data, loading } = useSearchCasesQuery({
     variables: {
@@ -316,9 +329,9 @@ export const DisplayAllMarkers = ({ bounds }: { bounds?: LngLatBounds }) => {
       },
     },
   })
-  const [displayData, setDisplayData] = useState(data?.searchCases)
-
-  console.log('displayData', displayData)
+  const displayData = usePreviousData<SearchCasesQuery['searchCases']>(
+    data?.searchCases,
+  )
 
   console.log(data, loading)
   return (
@@ -328,7 +341,7 @@ export const DisplayAllMarkers = ({ bounds }: { bounds?: LngLatBounds }) => {
           <IconRefresh className="animate-spin-reverse" />
         </Panel>
       ) : null}
-      {data?.searchCases?.map((caseInfo) => (
+      {displayData?.map((caseInfo) => (
         <MarkerWithPopup key={caseInfo.case?.id} marker={caseInfo} />
       ))}
     </div>

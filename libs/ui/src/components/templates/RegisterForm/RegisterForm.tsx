@@ -2,20 +2,17 @@ import { Button } from '../../atoms/Button'
 import { HtmlInput } from '../../atoms/HtmlInput'
 import { HtmlLabel } from '../../atoms/HtmlLabel'
 import Link from 'next/link'
-import { register as registerUser } from '@haveyouseen-org/network/src/auth'
+import { register as registerUser } from '@findus-org/network/src/auth'
 
 import { Form } from '../../atoms/Form'
-import {
-  FormTypeRegister,
-  useFormRegister,
-} from '@haveyouseen-org/forms/src/signUp'
-import { useAppSelector } from '@haveyouseen-org/store'
-import { selectUid } from '@haveyouseen-org/store/user'
+import { FormTypeRegister, useFormRegister } from '@findus-org/forms/src/signUp'
+import { useAppSelector } from '@findus-org/store'
+import { selectUid } from '@findus-org/store/user'
 
-import { notification$ } from '@haveyouseen-org/util/subjects'
+import { notification$ } from '@findus-org/util/subjects'
 import { useRouter } from 'next/router'
 
-import { useAsync } from '@haveyouseen-org/hooks/src/fetcher'
+import { useAsync } from '@findus-org/hooks/src/fetcher'
 
 export interface ISignupFormProps {}
 

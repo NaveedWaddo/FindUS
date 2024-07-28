@@ -7,7 +7,7 @@ import {
   ReportType,
   namedOperations,
   useCreateReportsMutation,
-} from '@haveyouseen-org/network/src/generated'
+} from '@findus-org/network/src/generated'
 
 import { Button } from '../../atoms/Button'
 import { Form } from '../../atoms/Form'
@@ -17,11 +17,11 @@ import HtmlSelect from '../../atoms/HtmlSelect'
 import { HtmlTextArea } from '../../atoms/HtmlTextArea'
 import { AudioRecord } from '../../molecules/AudioRecord'
 import { DisplayLocation } from '../AddNewCase/AddNewCase'
-import { useAppSelector } from '@haveyouseen-org/store'
-import { selectUid } from '@haveyouseen-org/store/user'
-import { notification$ } from '@haveyouseen-org/util/subjects'
-import { makeId } from '@haveyouseen-org/util'
-import { FormTypeAddNewReports } from '@haveyouseen-org/forms/src/addNewReports'
+import { useAppSelector } from '@findus-org/store'
+import { selectUid } from '@findus-org/store/user'
+import { notification$ } from '@findus-org/util/subjects'
+import { makeId } from '@findus-org/util'
+import { FormTypeAddNewReports } from '@findus-org/forms/src/addNewReports'
 
 export const AddReports = () => {
   const {

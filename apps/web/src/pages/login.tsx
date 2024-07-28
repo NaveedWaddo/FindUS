@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import { AuthLayout } from '@haveyouseen-org/ui/src/components/molecules/AuthLayout'
-import { LoginForm } from '@haveyouseen-org/ui/src/components/templates/LoginForm'
+import { AuthLayout } from '@findus-org/ui/src/components/molecules/AuthLayout'
+import { LoginForm } from '@findus-org/ui/src/components/templates/LoginForm'
 
 export default function Login() {
   return (

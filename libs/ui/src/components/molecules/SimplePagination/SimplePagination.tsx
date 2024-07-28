@@ -1,7 +1,7 @@
 import React from 'react'
 import { PlainButton } from '../../atoms/PlainButton'
 import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react'
-import { TAKE_COUNT } from '@haveyouseen-org/util'
+import { TAKE_COUNT } from '@findus-org/util'
 export interface SimplePaginationProps {
   setSkip: React.Dispatch<React.SetStateAction<number>>
   setTake: React.Dispatch<React.SetStateAction<number>>

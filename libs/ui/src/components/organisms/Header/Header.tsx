@@ -6,10 +6,10 @@ import { Container } from '../../atoms/Container'
 import { NavSidebar, ShowMenuItems } from '../NavSidebar/NavSidebar'
 import { Suspense } from 'react'
 
-import { useAppSelector } from '@haveyouseen-org/store'
-import { selectUid } from '@haveyouseen-org/store/user'
+import { useAppSelector } from '@findus-org/store'
+import { selectUid } from '@findus-org/store/user'
 
-import { MenuItem, Role } from '@haveyouseen-org/types'
+import { MenuItem, Role } from '@findus-org/types'
 
 export type IHeaderProps = {
   menuItems?: MenuItem[]

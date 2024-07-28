@@ -9,11 +9,11 @@ import {
 import { useState } from 'react'
 
 import { Button } from '../../atoms/Button'
-import { useAppSelector } from '@haveyouseen-org/store'
-import { selectUser } from '@haveyouseen-org/store/user'
-import { storage } from '@haveyouseen-org/network/src/config/firebase'
-import { makeId } from '@haveyouseen-org/util'
-import { notification$ } from '@haveyouseen-org/util/subjects'
+import { useAppSelector } from '@findus-org/store'
+import { selectUser } from '@findus-org/store/user'
+import { storage } from '@findus-org/network/src/config/firebase'
+import { makeId } from '@findus-org/util'
+import { notification$ } from '@findus-org/util/subjects'
 
 export interface IAudioRecordProps {
   setAudio: (url: string | null) => void

@@ -1,5 +1,5 @@
 {
-  "name": "@haveyouseen-org/store",
+  "name": "@findus-org/store",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -10,9 +10,9 @@
     "redux-persist": "^6.0.0"
   },
   "devDependencies": {
-    "@haveyouseen-org/network": "*",
-    "@haveyouseen-org/types": "*",
-    "@haveyouseen-org/ui": "*",
+    "@findus-org/network": "*",
+    "@findus-org/types": "*",
+    "@findus-org/ui": "*",
     "@redux-devtools/extension": "^3.2.5"
   },
   "scripts": {

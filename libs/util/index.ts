@@ -1,11 +1,11 @@
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import { format } from 'date-fns'
-import { LatLng } from '@haveyouseen-org/types'
-import { CaseQuery, ReportType } from '@haveyouseen-org/network/src/generated'
+import { LatLng } from '@findus-org/types'
+import { CaseQuery, ReportType } from '@findus-org/network/src/generated'
 
 import { notification$ } from './subjects'
-import { storage } from '@haveyouseen-org/network/src/config/firebase'
+import { storage } from '@findus-org/network/src/config/firebase'
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 
 export const useImageUpload = () => {

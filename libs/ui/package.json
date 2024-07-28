@@ -1,5 +1,5 @@
 {
-  "name": "@haveyouseen-org/ui",
+  "name": "@findus-org/ui",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,11 +14,11 @@
     "comp": "node ./src/generators/index.js"
   },
   "dependencies": {
-    "@haveyouseen-org/forms": "*",
-    "@haveyouseen-org/hooks": "*",
-    "@haveyouseen-org/network": "*",
-    "@haveyouseen-org/store": "*",
-    "@haveyouseen-org/util": "*",
+    "@findus-org/forms": "*",
+    "@findus-org/hooks": "*",
+    "@findus-org/network": "*",
+    "@findus-org/store": "*",
+    "@findus-org/util": "*",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@headlessui/react": "^1.7.13",
