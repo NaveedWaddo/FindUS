@@ -9,6 +9,7 @@ import { selectUid } from '@findus-org/store/user'
 
 import { MenuItem } from '@findus-org/types'
 import { signOut } from '@findus-org/network/src/auth'
+import { ShowUserDisplayName } from '../../atoms/ShowUserDisplayName'
 
 export interface INavSidebarProps {
   menuItems: MenuItem[]
@@ -62,17 +63,18 @@ export const NavSidebar = ({ menuItems }: INavSidebarProps) => {
               </Link>
             </>
           ) : (
-            <>
+            <div className="flex flex-col gap-6">
+              <ShowUserDisplayName />
               <Button
-                variant="text"
                 onClick={async () => {
                   await signOut()
                 }}
-                className="flex items-center gap-2"
               >
-                Log out <IconDoorExit />
+                <div className="flex justify-center gap-2">
+                  Log out <IconDoorExit />
+                </div>
               </Button>
-            </>
+            </div>
           )}
         </Sidebar.Footer>
       </Sidebar>

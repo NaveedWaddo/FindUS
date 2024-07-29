@@ -5,7 +5,10 @@ import Link from 'next/link'
 import { register as registerUser } from '@findus-org/network/src/auth'
 
 import { Form } from '../../atoms/Form'
-import { FormTypeRegister, useFormRegister } from '@findus-org/forms/src/signUp'
+import {
+  FormTypeRegister,
+  useFormRegister,
+} from '@findus-org/forms/src/signUp'
 import { useAppSelector } from '@findus-org/store'
 import { selectUid } from '@findus-org/store/user'
 
@@ -13,45 +16,62 @@ import { notification$ } from '@findus-org/util/subjects'
 import { useRouter } from 'next/router'
 
 import { useAsync } from '@findus-org/hooks/src/fetcher'
+import { Role } from '@findus-org/types'
+import { useCreateUser } from '@findus-org/hooks/src/user'
+import { useEffect } from 'react'
 
-export interface ISignupFormProps {}
+export interface IRegisterFormProps {
+  className?: string
+  role?: Role
+}
 
-export const RegisterForm = ({ className }: { className?: string }) => {
+export const RegisterForm = ({ role, className }: IRegisterFormProps) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useFormRegister()
 
-  const { loading, error, success, callAsyncFn } = useAsync(
+  const { data, loading, error, success, callAsyncFn } = useAsync(
     (data: FormTypeRegister) => registerUser(data),
     (err: any) => {
       console.log('err', err)
-      if (err.code === 'auth/user-not-found') {
-        return 'Invalid email.'
-      } else if (err.code === 'auth/email-already-in-use') {
-        return 'Email already in use.'
+      if (err.code === 'auth/email-already-in-use') {
+        return 'Registration failed.'
       }
       return 'Something went wrong. Please try again.'
     },
   )
 
   const router = useRouter()
+  const { createUser, loading: creatingUser } = useCreateUser()
 
-  const uid = useAppSelector(selectUid)
-  if (error) {
-    notification$.next({ message: error, type: 'error' })
-  }
-  if (uid) {
-    notification$.next({ message: 'Authenticated. ' })
-    router.push('/')
-  }
+  useEffect(() => {
+    if (error) notification$.next({ message: error, duration: 8000 })
+  }, [error])
+
+  useEffect(() => {
+    console.log('data use effect ', data)
+    if (data?.user.uid) {
+      ;(async () => {
+        await createUser({
+          displayName: data.user.displayName,
+          uid: data.user.uid,
+          role,
+        })
+
+        if (success) {
+          router.push('/')
+        }
+      })()
+      notification$.next({ message: 'Authenticated. ' })
+    }
+  }, [data, success, role, router])
 
   return (
     <Form
-      onSubmit={handleSubmit(async (data) => {
-        const { email, password } = data
-        const user = await callAsyncFn({ email, password })
+      onSubmit={handleSubmit(async ({ email, password, displayName }) => {
+        await callAsyncFn({ email, password, displayName })
       })}
     >
       <HtmlLabel title="Email" error={errors.email?.message}>
@@ -75,7 +95,7 @@ export const RegisterForm = ({ className }: { className?: string }) => {
           Please fix the above {Object.keys(errors).length} errors
         </div>
       ) : null}
-      <Button type="submit" isLoading={loading} fullWidth>
+      <Button type="submit" isLoading={loading || creatingUser} fullWidth>
         Create account
       </Button>
       <div className="mt-4 text-sm ">
