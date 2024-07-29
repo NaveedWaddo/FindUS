@@ -11,9 +11,11 @@ import { useAppSelector } from '@findus-org/store'
 import { selectUid } from '@findus-org/store/user'
 
 import { useAsync } from '@findus-org/hooks/src/fetcher'
-import { login } from '@findus-org/network/src/auth'
+import { googleSignIn, login } from '@findus-org/network/src/auth'
 import { notification$ } from '@findus-org/util/subjects'
 import { useRouter } from 'next/router'
+import { PlainButton } from '../../atoms/PlainButton'
+import { IconBrandGoogle } from '@tabler/icons-react'
 
 export interface ILoginFormProps {
   className?: string
@@ -73,7 +75,7 @@ const LoginForm = ({ className }: ILoginFormProps) => {
       </Button>
       {error ? <FormError error={error.message} /> : null}
       <div className="mt-4 text-sm">
-        Do not have a FindUS account?
+        Do not have a findus account?
         <br />
         <Link
           href="/register"
@@ -82,6 +84,14 @@ const LoginForm = ({ className }: ILoginFormProps) => {
           Create one
         </Link>{' '}
         now.
+      </div>
+      <div className="flex justify-center gap-2 mt-6">
+        <PlainButton
+          className="p-1 transition-all border-2 border-black rounded-full shadow-lg hover:shadow-xl"
+          onClick={googleSignIn}
+        >
+          <IconBrandGoogle />
+        </PlainButton>
       </div>
     </Form>
   )

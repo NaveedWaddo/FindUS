@@ -9,6 +9,7 @@ import { ReduxProvider } from '@findus-org/store/Provider'
 import { ApolloProvider } from '@findus-org/network/src/config/apollo'
 import { AppLevelListeners } from '@findus-org/ui/src/components/atoms/AppLevelListeners'
 import { Notifications } from '@findus-org/ui/src/components/organisms/Notifications'
+import { useInitialiseUser } from '@findus-org/hooks/src/user'
 
 const MENUITEMS: MenuItem[] = [
   { label: 'New Case', href: '/add-new-case', loggedIn: true },
@@ -25,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ReduxProvider>
       <ApolloProvider>
-        <AppLevelListeners />
+        <AppLevelListeners role="officer" />
 
         <Header
           type="officer"
