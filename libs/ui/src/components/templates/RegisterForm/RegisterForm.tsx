@@ -14,7 +14,7 @@ import {
 } from '@findus-org/forms/src/signUp'
 import { useAppSelector } from '@findus-org/store'
 import { selectUid } from '@findus-org/store/user'
-import { IconBrandGithub, IconBrandGoogle } from '@tabler/icons-react'
+import { IconBrandGoogle } from '@tabler/icons-react'
 
 import { notification$ } from '@findus-org/util/subjects'
 import { useRouter } from 'next/router'
