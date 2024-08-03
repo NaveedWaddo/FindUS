@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '..'
-import { Role } from "@findus-org/types";
+import { Role } from '@findus-org/types'
 
 export type UserSliceType = {
   uid?: string

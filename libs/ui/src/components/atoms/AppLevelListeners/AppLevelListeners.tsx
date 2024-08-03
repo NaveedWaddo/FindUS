@@ -1,7 +1,4 @@
-import {
-  useInitialiseUser,
-  useUserListener,
-} from '@findus-org/hooks/src/user'
+import { useInitialiseUser, useUserListener } from '@findus-org/hooks/src/user'
 import { useNotification } from '@findus-org/hooks/src/notifications'
 import { Role } from '@findus-org/types'
 

@@ -8,10 +8,7 @@ import {
 } from '@findus-org/network/src/auth'
 
 import { Form } from '../../atoms/Form'
-import {
-  FormTypeRegister,
-  useFormRegister,
-} from '@findus-org/forms/src/signUp'
+import { FormTypeRegister, useFormRegister } from '@findus-org/forms/src/signUp'
 import { useAppSelector } from '@findus-org/store'
 import { selectUid } from '@findus-org/store/user'
 import { IconBrandGoogle } from '@tabler/icons-react'

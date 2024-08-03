@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ReduxProvider>
       <ApolloProvider>
-        <AppLevelListeners role="witness"/>
+        <AppLevelListeners role="witness" />
 
         <Header menuItems={MENUITEMS} sideMenuItems={SUBMENUITEMS} />
 

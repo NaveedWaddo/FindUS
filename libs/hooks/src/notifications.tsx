@@ -14,7 +14,7 @@ import {
   timer,
 } from 'rxjs'
 import { useAppDispatch } from '@findus-org/store'
-import { delayWhen } from "rxjs/operators";
+import { delayWhen } from 'rxjs/operators'
 import {} from '@findus-org/store/utils'
 
 export const useNotification = () => {
