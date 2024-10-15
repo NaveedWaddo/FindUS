@@ -1,0 +1,2 @@
+import{j as e}from"./jsx-runtime-ffb262ed.js";const s=({title:t,children:a})=>e.jsxs("div",{className:"text-black",children:[e.jsx("div",{className:"font-semibold",children:t}),e.jsx("div",{className:"text-sm",children:a})]});try{s.displayName="KeyValue",s.__docgenInfo={description:"",displayName:"KeyValue",props:{title:{defaultValue:null,description:"",name:"title",required:!0,type:{name:"string"}}}}}catch{}export{s as K};
+//# sourceMappingURL=KeyValue-916869c0.js.map

@@ -1,0 +1,2 @@
+import{j as e}from"./jsx-runtime-ffb262ed.js";import{I as s}from"./IconExclamationCircle-1d6b43d4.js";const t=({error:r})=>r?e.jsxs("div",{className:"flex items-center justify-start gap-1 mt-1 text-xs text-gray-900",children:[e.jsx(s,{className:"inline w-4 h-4 text-red-600"})," ",r]}):null;try{t.displayName="FormError",t.__docgenInfo={description:"",displayName:"FormError",props:{error:{defaultValue:null,description:"",name:"error",required:!1,type:{name:"string"}}}}}catch{}export{t as F};
+//# sourceMappingURL=FormError-360f8036.js.map

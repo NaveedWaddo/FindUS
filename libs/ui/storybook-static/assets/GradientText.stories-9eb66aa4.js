@@ -1,0 +1,2 @@
+import{G as a}from"./GradientText-990390b0.js";import"./jsx-runtime-ffb262ed.js";import"./index-76fb7be0.js";import"./_commonjsHelpers-de833af9.js";const i={component:a},r={};var e,o,t;r.parameters={...r.parameters,docs:{...(e=r.parameters)==null?void 0:e.docs,source:{originalSource:"{}",...(t=(o=r.parameters)==null?void 0:o.docs)==null?void 0:t.source}}};const n=["Primary"];export{r as Primary,n as __namedExportsOrder,i as default};
+//# sourceMappingURL=GradientText.stories-9eb66aa4.js.map

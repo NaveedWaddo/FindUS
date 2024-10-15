@@ -16,7 +16,7 @@ export const HtmlLabel = React.forwardRef<HTMLLabelElement, HtmlLabelProps>(
         <div className="mb-1 font-semibold capitalize">
           {title}{' '}
           <span className="text-xs font-normal text-gray-600 ">
-          {units ? `(${units})` : null}
+            {units ? `(${units})` : null}
           </span>
         </div>
 

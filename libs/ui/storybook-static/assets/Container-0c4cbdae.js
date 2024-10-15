@@ -1,0 +1,2 @@
+import{j as s}from"./jsx-runtime-ffb262ed.js";const a=({children:e,className:r})=>s.jsx("div",{className:`container px-2 mx-auto ${r}`,children:e});try{a.displayName="Container",a.__docgenInfo={description:"",displayName:"Container",props:{className:{defaultValue:null,description:"",name:"className",required:!1,type:{name:"string"}}}}}catch{}export{a as C};
+//# sourceMappingURL=Container-0c4cbdae.js.map

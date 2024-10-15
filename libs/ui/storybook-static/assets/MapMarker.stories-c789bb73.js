@@ -1,0 +1,4 @@
+import{j as a}from"./jsx-runtime-ffb262ed.js";import{M as t}from"./MapMarker-331aa9ee.js";import{M as p}from"./Map-34c1368f.js";import"./index-76fb7be0.js";import"./_commonjsHelpers-de833af9.js";import"./exports-mapbox-5254a25e.js";import"./iframe-a1334127.js";import"../sb-preview/runtime.js";import"./index-d3ea75b5.js";const j={title:"molecules/MapMarker",component:t},i=m=>a.jsx(p,{children:a.jsx(t,{...m})}),r=i.bind({});r.args={};var o,e,s;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:`args => <Map>\r
+    <Marker {...args} />\r
+  </Map>`,...(s=(e=r.parameters)==null?void 0:e.docs)==null?void 0:s.source}}};const k=["Primary"];export{r as Primary,k as __namedExportsOrder,j as default};
+//# sourceMappingURL=MapMarker.stories-c789bb73.js.map

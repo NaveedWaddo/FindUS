@@ -1,7 +1,4 @@
-import {
-  LocationInfo,
-  useSearchLocation,
-} from '@findus-org/hooks/src/location'
+import { LocationInfo, useSearchLocation } from '@findus-org/hooks/src/location'
 
 import { useMap } from 'react-map-gl'
 import { Autocomplete } from '../../atoms/Autocomplete'

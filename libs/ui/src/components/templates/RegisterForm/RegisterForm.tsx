@@ -9,8 +9,8 @@ import {
 
 import { Form } from '../../atoms/Form'
 import { FormTypeRegister, useFormRegister } from '@findus-org/forms/src/signUp'
-import { useAppSelector } from '@findus-org/store'
-import { selectUid } from '@findus-org/store/user'
+import { useAppDispatch, useAppSelector } from '@findus-org/store'
+import { selectUid, setDisplayName } from '@findus-org/store/user'
 import { IconBrandGoogle } from '@tabler/icons-react'
 
 import { notification$ } from '@findus-org/util/subjects'
@@ -32,6 +32,8 @@ export const RegisterForm = ({ role, className }: IRegisterFormProps) => {
     handleSubmit,
     formState: { errors },
   } = useFormRegister()
+
+  const dispatch = useAppDispatch()
 
   const { data, loading, error, success, callAsyncFn } = useAsync(
     (data: FormTypeRegister) => registerUser(data),
@@ -61,7 +63,10 @@ export const RegisterForm = ({ role, className }: IRegisterFormProps) => {
   return (
     <div>
       <Form
+        className={role === 'officer' ? 'pointer-events-none opacity-40 ' : ''}
         onSubmit={handleSubmit(async ({ email, password, displayName }) => {
+          // hack to solve the delay in firebase displayname update.
+          dispatch(setDisplayName(displayName || ''))
           await callAsyncFn({ email, password, displayName })
         })}
       >
@@ -89,21 +94,19 @@ export const RegisterForm = ({ role, className }: IRegisterFormProps) => {
         <Button type="submit" isLoading={loading} fullWidth>
           Create account
         </Button>
-        <div className="mt-4 text-sm ">
-          Already have an Have you seen account?
-          <br />
-          <Link
-            href="/login"
-            className="font-bold underline underline-offset-4"
-          >
-            Login
-          </Link>{' '}
-          now.
-        </div>
       </Form>
-      <div className="flex justify-center gap-2 mt-6">
+      <div className="mt-4 text-sm ">
+        Already have an FindUS account?
+        <br />
+        <Link href="/login" className="font-bold underline underline-offset-4">
+          Login
+        </Link>{' '}
+        now.
+      </div>
+      <div className="mt-4 text-xs text-center text-gray">Continue with</div>
+      <div className="flex justify-center gap-2 mt-2">
         <PlainButton
-          className="p-1 border-2 rounded-full hover:shadow-lg"
+          className="p-1 border-2 border-black rounded-full hover:shadow-lg"
           onClick={googleSignIn}
         >
           <IconBrandGoogle />

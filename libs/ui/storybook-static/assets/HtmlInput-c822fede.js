@@ -1,0 +1,2 @@
+import{j as o}from"./jsx-runtime-ffb262ed.js";import{R as p}from"./index-76fb7be0.js";const t=p.forwardRef((r,e)=>o.jsx("input",{ref:e,className:"block w-full px-3 py-2 border rounded appearance-none placeholder-gray read-only:text-gray-600 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm",...r}));t.displayName="Input";try{Input.displayName="Input",Input.__docgenInfo={description:"",displayName:"Input",props:{}}}catch{}export{t as H};
+//# sourceMappingURL=HtmlInput-c822fede.js.map

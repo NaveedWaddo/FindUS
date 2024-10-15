@@ -75,7 +75,7 @@ const LoginForm = ({ className }: ILoginFormProps) => {
       </Button>
       {error ? <FormError error={error.message} /> : null}
       <div className="mt-4 text-sm">
-        Do not have a findus account?
+        Do not have a FindUS account?
         <br />
         <Link
           href="/register"

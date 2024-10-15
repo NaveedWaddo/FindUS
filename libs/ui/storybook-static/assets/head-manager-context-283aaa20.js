@@ -1,0 +1,2 @@
+import{_ as n}from"./_interop_require_wildcard-408360b9.js";import{r as o}from"./index-76fb7be0.js";var e={},t;function c(){return t||(t=1,function(r){Object.defineProperty(r,"__esModule",{value:!0}),Object.defineProperty(r,"HeadManagerContext",{enumerable:!0,get:function(){return a}});const a=n._(o).default.createContext({})}(e)),e}export{c as r};
+//# sourceMappingURL=head-manager-context-283aaa20.js.map

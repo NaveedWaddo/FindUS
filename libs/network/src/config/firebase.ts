@@ -4,18 +4,18 @@ import { getFirestore } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCqUNuPY9KqTeOO-bSox933rHjKK73yWWY',
-  authDomain: 'karthick-findus.firebaseapp.com',
-  projectId: 'karthick-findus',
-  storageBucket: 'karthick-findus.appspot.com',
-  messagingSenderId: '184229030475',
-  appId: '1:184229030475:web:c9ca4a8dccebe29063fbce',
-  measurementId: 'G-FGTC0FG2Y8',
+  apiKey: 'AIzaSyAdZaC-Zrz088Az36_tjeKEGYRDhEioyZk',
+  authDomain: 'findus-786be.firebaseapp.com',
+  projectId: 'findus-786be',
+  storageBucket: 'findus-786be.appspot.com',
+  messagingSenderId: '112586470595',
+  appId: '1:112586470595:web:d35bcbe33560d74be71e76',
+  measurementId: 'G-WGH8EY2ES5',
 }
 
 // Initialize Firebase
 export const firebaseApp = initializeApp(firebaseConfig)
-// const analytics = getAnalytics(firebaseApp)
+
 export const db = getFirestore(firebaseApp)
 export const storage = getStorage(firebaseApp)
 

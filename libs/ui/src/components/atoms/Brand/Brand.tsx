@@ -20,10 +20,10 @@ export const Brand = ({ type }: IBrandProps) => {
           src={victimPic}
           width={100}
           height={100}
-          className="object-cover w-8 h-8 border border-black shadow-lg"
+          className="object-cover w-8 h-8 border border-white rounded shadow-xl shadow-black/30"
         />
       ) : (
-        <div className="h-full p-1 border border-black shadow-lg">
+        <div className="h-full p-1 border border-black rounded shadow-lg">
           <IconUser className="stroke-2" />
         </div>
       )}
@@ -31,12 +31,12 @@ export const Brand = ({ type }: IBrandProps) => {
       <div>
         <div className="flex gap-1">
           <div className="text-xl font-black">
-            FindUS {victimName ? ' ' + victimName : ' '}
+            FindUS{victimName ? ' ' + victimName : ''}?
           </div>
-          <span className="text-xs">{type}</span>
+          {type ? <span className="text-xs">{`${type} app`}</span> : null}
         </div>
         <GradientText className="text-xs">
-          Project by <span className="italic">Naveed Waddo</span>
+          Demo project by <span className="italic">Naveed Waddo</span>
         </GradientText>
       </div>
     </div>

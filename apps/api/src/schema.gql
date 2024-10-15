@@ -31,6 +31,7 @@ type Report {
   approvedReport: ApprovedReport
   witness: Witness
   case: Case
+  comments: [Comment!]
 }
 
 """Enum for ReportType"""
@@ -119,6 +120,17 @@ type Location {
   reports: [Report!]!
 }
 
+type Comment {
+  id: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  content: String!
+  reportId: Int!
+  witnessUid: String!
+  report: Report
+  witness: Witness
+}
+
 type LoginOutput {
   kind: String!
   localId: String!
@@ -167,9 +179,12 @@ type Query {
   officerMe(where: OfficerWhereUniqueInput): Officer
   reports(where: ReportWhereInput, orderBy: [ReportOrderByWithRelationInput!], cursor: ReportWhereUniqueInput, take: Int, skip: Int, distinct: [ReportScalarFieldEnum!]): [Report!]!
   report(where: ReportWhereUniqueInput): Report!
+  comments(where: CommentWhereInput, orderBy: [CommentOrderByWithRelationInput!], cursor: CommentWhereUniqueInput, take: Int, skip: Int, distinct: [CommentScalarFieldEnum!]): [Comment!]!
+  comment(where: CommentWhereUniqueInput): Comment!
 }
 
 input WitnessWhereInput {
+  comments: CommentListRelationFilter
   createdAt: DateTimeFilter
   updatedAt: DateTimeFilter
   uid: StringFilter
@@ -178,6 +193,34 @@ input WitnessWhereInput {
   AND: [WitnessWhereInput!]
   OR: [WitnessWhereInput!]
   NOT: [WitnessWhereInput!]
+}
+
+input CommentListRelationFilter {
+  every: CommentWhereInput
+  some: CommentWhereInput
+  none: CommentWhereInput
+}
+
+input CommentWhereInput {
+  id: IntFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  content: StringFilter
+  reportId: IntFilter
+  witnessUid: StringFilter
+  Report: ReportWhereInput
+  Witness: WitnessWhereInput
+  AND: [CommentWhereInput!]
+  OR: [CommentWhereInput!]
+  NOT: [CommentWhereInput!]
+}
+
+input IntFilter {
+  equals: Int
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
 }
 
 input DateTimeFilter {
@@ -210,13 +253,8 @@ enum QueryMode {
   insensitive
 }
 
-input ReportListRelationFilter {
-  every: ReportWhereInput
-  some: ReportWhereInput
-  none: ReportWhereInput
-}
-
 input ReportWhereInput {
+  comments: CommentListRelationFilter
   images: StringListFilter
   id: IntFilter
   createdAt: DateTimeFilter
@@ -243,14 +281,6 @@ input StringListFilter {
   hasEvery: [String!]
   hasSome: [String!]
   isEmpty: Boolean
-}
-
-input IntFilter {
-  equals: Int
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
 }
 
 input EnumReportTypeFilter {
@@ -285,6 +315,12 @@ input FloatFilter {
   gt: Float
   gte: Float
   not: Float
+}
+
+input ReportListRelationFilter {
+  every: ReportWhereInput
+  some: ReportWhereInput
+  none: ReportWhereInput
 }
 
 input CaseRelationFilter {
@@ -397,11 +433,16 @@ input WitnessRelationFilter {
 }
 
 input WitnessOrderByWithRelationInput {
+  comments: CommentOrderByRelationAggregateInput
   createdAt: SortOrder
   updatedAt: SortOrder
   uid: SortOrder
   name: SortOrder
   reports: ReportOrderByRelationAggregateInput
+}
+
+input CommentOrderByRelationAggregateInput {
+  _count: SortOrder
 }
 
 enum SortOrder {
@@ -435,6 +476,7 @@ input ApprovedReportOrderByWithRelationInput {
 }
 
 input ReportOrderByWithRelationInput {
+  comments: CommentOrderByRelationAggregateInput
   images: SortOrder
   id: SortOrder
   createdAt: SortOrder
@@ -599,6 +641,30 @@ enum ReportScalarFieldEnum {
   images
 }
 
+input CommentOrderByWithRelationInput {
+  id: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  content: SortOrder
+  reportId: SortOrder
+  witnessUid: SortOrder
+  Report: ReportOrderByWithRelationInput
+  Witness: WitnessOrderByWithRelationInput
+}
+
+input CommentWhereUniqueInput {
+  id: Int
+}
+
+enum CommentScalarFieldEnum {
+  id
+  createdAt
+  updatedAt
+  content
+  reportId
+  witnessUid
+}
+
 type Mutation {
   login(credentials: LoginInput!): LoginOutput!
   register(credentials: RegisterInput!): RegisterOutput!
@@ -613,6 +679,7 @@ type Mutation {
   updateApprovedReport(updateApprovedReportInput: UpdateApprovedReportInput!): ApprovedReport!
   removeApprovedReport(where: ApprovedReportWhereUniqueInput): ApprovedReport!
   createCase(createCaseInput: CreateCaseInput!): Case!
+  updateCaseStatus(updateCaseInput: UpdateCaseInput!): Case!
   removeCase(where: CaseWhereUniqueInput): Case!
   createLocation(createLocationInput: CreateLocationInput!): Location!
   updateLocation(updateLocationInput: UpdateLocationInput!): Location!
@@ -627,6 +694,7 @@ type Mutation {
   createReports(createReportsInput: [CreateReportInputWithoutCaseId!]!, caseId: Int!): Case!
   updateReport(updateReportInput: UpdateReportInput!): Report!
   removeReport(where: ReportWhereUniqueInput): Report!
+  createComment(createCommentInput: CreateCommentInput!): Comment!
 }
 
 input LoginInput {
@@ -713,6 +781,11 @@ input CreateLocationInput {
   address: String!
 }
 
+input UpdateCaseInput {
+  status: Status!
+  id: Int!
+}
+
 input UpdateLocationInput {
   latitude: Float
   longitude: Float
@@ -764,4 +837,9 @@ input UpdateReportInput {
   images: [String!]
   description: String
   id: Int!
+}
+
+input CreateCommentInput {
+  content: String!
+  reportId: Int!
 }

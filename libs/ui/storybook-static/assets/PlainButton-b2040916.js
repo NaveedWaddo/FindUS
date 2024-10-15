@@ -1,0 +1,2 @@
+import{j as a}from"./jsx-runtime-ffb262ed.js";const e=({children:t,loading:n,...o})=>a.jsx("button",{type:"button",...o,children:n?"...":t});try{e.displayName="PlainButton",e.__docgenInfo={description:"",displayName:"PlainButton",props:{loading:{defaultValue:null,description:"",name:"loading",required:!1,type:{name:"boolean"}}}}}catch{}export{e as P};
+//# sourceMappingURL=PlainButton-b2040916.js.map

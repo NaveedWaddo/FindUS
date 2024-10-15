@@ -1,0 +1,2 @@
+import{j as a}from"./jsx-runtime-ffb262ed.js";import{R as s}from"./index-76fb7be0.js";const e=s.forwardRef(({children:r,...o},t)=>a.jsx("select",{...o,ref:t,className:"block w-full px-3 py-2 placeholder-gray-500 border border-gray-200 rounded shadow-sm appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm",children:r}));e.displayName="HtmlSelect";const m=e;try{e.displayName="HtmlSelect",e.__docgenInfo={description:"",displayName:"HtmlSelect",props:{}}}catch{}export{m as H};
+//# sourceMappingURL=HtmlSelect-1fb2d959.js.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"subjects-5c717a40.js","sources":["../../../util/subjects.ts"],"sourcesContent":["import { Subject } from 'rxjs'\nimport { NotificationType } from '@findus-org/types'\n\nexport const notification$ = new Subject<Omit<NotificationType, 'id'>>()\n"],"names":["notification$","Subject"],"mappings":"0CAGa,MAAAA,EAAgB,IAAIC"}
