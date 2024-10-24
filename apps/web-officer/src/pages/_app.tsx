@@ -1,5 +1,6 @@
 import '@/styles/globals.css'
 import 'mapbox-gl/dist/mapbox-gl.css'
+import '../styles/fonts.css'
 
 import type { AppProps } from 'next/app'
 import { Footer } from '@findus-org/ui/src/components/organisms/Footer'
